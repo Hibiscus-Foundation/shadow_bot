@@ -38,7 +38,7 @@ bot.on("message", async message => {
 
     if (message.content.startsWith(prefix)) {
         var hcmd = bot.commands.get(handlercmd[0])
-        if (hcmd) hcmd.run(bot, message, args, con);
+        if (hcmd) hcmd.run(bot, message, args);
     }
 
     if (message.content.toLowerCase().includes("discord") && message.content.includes(".") && message.content.toLowerCase().includes("/")) {

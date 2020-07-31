@@ -15,7 +15,7 @@ module.exports.run = async(bot, message, args) => {
         .addField("Moderator Commands", "Use ``>help mod`` for Moderator commands")
         .addField("Fun Commands", "Use ``Use >help fun`` for Fun commands")
         .addField("Support Commands", "Use ``>help supp`` for Support commands")
-        .addField("Developer", "Ken Senpai");
+        .addField("Developer", "Purukitto");
 
     let gembed = new Discord.MessageEmbed()
         .setDescription("Help Menu-General")

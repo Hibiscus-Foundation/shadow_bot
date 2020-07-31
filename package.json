@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Purukitto/shadow_bot#readme",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.2.0",
+    "superagent": "^5.3.1"
   }
 }

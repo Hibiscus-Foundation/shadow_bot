@@ -7,7 +7,7 @@ module.exports.run = async(bot, message, args) => {
     mchannel = message.channel;
     let ctip = ["Have a great day!", "Hope you are having a good day!", "Smile", "PSA, your smile is precious"]
     let tipn = Math.floor(Math.random() * 4);
-    let qq = body.length();
+    let qq = body.length;
     let qn = Math.floor(Math.random() * qq);
     // message.delete().catch(O_o => {});
 

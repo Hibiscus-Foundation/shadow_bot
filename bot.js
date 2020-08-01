@@ -72,7 +72,7 @@ bot.on("messageUpdate", (oldMessage, newMessage) => {
 bot.on("guildMemberAdd", async member => {
     if (member.user.bot === true) return;
     let welcomechannel = member.guild.channels.cache.find(ch => ch.name === 'general');
-    let randomstuff = ["_Bork Bork_", "Does this mean I get more treats?", "Will you pet me?", "Have you followed hibsicused on Instagram yet?", "Did you bring friends?", "I’m excited", "_Swoons_", "Can you adopt me? No one’s giving me treats :("]
+    let randomstuff = ["_Bork Bork_", "Does this mean I get more treats?", "Will you pet me?", "Have you followed hibsicused on Instagram yet?", "Did you bring friends?", "I’m excited!", "_Swoons_", "Can you adopt me? No one’s giving me treats :(", "Welcome to the Army!", "Welcome to the Unknown!", "**Finally** we’ve been waiting for you!", "Thank you for taking the leap of faith!", "New server Who this?", "New entry alert *woof*"]
     let rq = randomstuff.length;
     let rn = Math.floor(Math.random() * rq);
     welcomechannel.send(`Look out everyone!! ${member} has spawned!! ` + randomstuff[rn]);

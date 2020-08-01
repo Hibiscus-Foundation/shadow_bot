@@ -15,5 +15,5 @@ module.exports.run = async(bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "doggo" //replace with call
+    name: "cat" //replace with call
 }

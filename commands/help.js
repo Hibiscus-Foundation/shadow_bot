@@ -50,7 +50,7 @@ module.exports.run = async(bot, message, args) => {
         .setDescription("Help Menu-Support")
         .setThumbnail(sicon)
         .setColor("#FF6B65")
-        .addField(">report", "Report a user for breaking rules or being a douche");
+        .addField(">report", "Report a user for breaking rules");
 
     if (!args[0]) {
         message.channel.send(helpembed);

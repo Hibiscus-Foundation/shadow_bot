@@ -22,5 +22,5 @@ module.exports.run = async(bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "covid" //replace with call
+    name: "quote" //replace with call
 }

@@ -16,7 +16,7 @@ module.exports.run = async(bot, message, args) => {
         .setTitle("Quote time!")
         .setColor("#FF0000")
         .setThumbnail(cicon)
-        .addField(body[qn].author, body[qn].text)
+        .addField(body[qn].text, body[qn].author)
         .setFooter(ctip[tipn]);
 
     mchannel.send(cupt);

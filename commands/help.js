@@ -39,9 +39,11 @@ module.exports.run = async(bot, message, args) => {
         .setDescription("Help Menu-Fun")
         .setThumbnail(ficon)
         .setColor("#FF6B65")
+        .addField(">doggo", "Get random images of doggos!")
+        .addField(">cat", "I do not approve but ok")
+        .addField(">quote", "Get a pretty sweet quote from our side")
         .addField(">roll", "Roll the dice")
-        .addField(">8ball", "Ask the mystic ball for guidance")
-        .addField(">quote", "Get a pretty sweet quote from our side");
+        .addField(">8ball", "Ask the mystic ball for guidance");
 
 
     let sembed = new Discord.MessageEmbed()

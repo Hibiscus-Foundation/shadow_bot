@@ -40,7 +40,9 @@ module.exports.run = async(bot, message, args) => {
         .setThumbnail(ficon)
         .setColor("#FF6B65")
         .addField(">roll", "Roll the dice")
-        .addField(">8ball", "Ask the mystic ball for guidance");
+        .addField(">8ball", "Ask the mystic ball for guidance")
+        .addField(">quote", "Get a pretty sweet quote from our side");
+
 
     let sembed = new Discord.MessageEmbed()
         .setDescription("Help Menu-Support")

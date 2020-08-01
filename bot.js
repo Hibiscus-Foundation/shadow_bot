@@ -72,7 +72,8 @@ bot.on("messageUpdate", (oldMessage, newMessage) => {
 bot.on("guildMemberAdd", async member => {
     if (member.user.bot === true) return;
     let welcomechannel = member.guild.channels.cache.find(ch => ch.name === 'general');
-    welcomechannel.send(`Look out everyone!! ${member} has spawned!! Don't forget to say HI!`);
+    let randomstuff = ["_Bork Bork_", "Does this mean I get more treats?", "Will you pet me?", "Have you followed hibsicused on Instagram yet?", "Did you bring friends?", "I’m excited", "_Swoons_", "Can you adopt me? No one’s giving me treats :("]
+    welcomechannel.send(`Look out everyone!! ${member} has spawned!! ` + randomstuff);
     let ruleschannel = member.guild.channels.cache.find(ch => ch.name === 'about-us');
     member.send(`Hey there thanks for joining the Server! Please go to ${ruleschannel} and to know more about us and the event. Also don't forget to introduce yourself in ${welcomechannel}`);
     let zchannel = member.guild.channels.cache.find(ch => ch.name === 'members-log');

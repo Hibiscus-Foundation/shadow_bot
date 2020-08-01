@@ -9,7 +9,7 @@ module.exports.run = async(bot, message, args) => {
     let cupt = new Discord.MessageEmbed()
         .setTitle("Cat :cat:")
         .setColor("#FF9900")
-        .setImage(body.url);
+        .setImage(body[0].url);
 
     mchannel.send(cupt);
 }

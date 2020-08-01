@@ -73,9 +73,9 @@ bot.on("messageUpdate", (oldMessage, newMessage) => {
 bot.on("guildMemberAdd", async member => {
     if (member.user.bot === true) return;
     let welcomechannel = member.guild.channels.cache.find(ch => ch.name === 'general');
-    welcomechannel.send(`Look out everyone!! ${member} has spawned!!`);
+    welcomechannel.send(`Look out everyone!! ${member} has spawned!! Don't forget to say HI!`);
     let ruleschannel = member.guild.channels.cache.find(ch => ch.name === 'about-us');
-    member.send(`Hey there thanks for joining the Server! Please go to ${ruleschannel} and to know about us and the event`);
+    member.send(`Hey there thanks for joining the Server! Please go to ${ruleschannel} and to know more about us and the event. Also don't forget to introduce yourself in ${welcomechannel}`);
     let zchannel = member.guild.channels.cache.find(ch => ch.name === 'members-log');
     zchannel.send(`${member} has joined the server! Im keeping a watch :)`);
 });
@@ -87,7 +87,7 @@ bot.on("guildMemberRemove", async member => {
     let disc = users.discriminator;
     let left = new Discord.MessageEmbed()
         .setAuthor(usern)
-        .setDescription(`${usern} left the server! K BYE`)
+        .setDescription(`${usern} left the server!`)
         .setColor("#00FFFF")
         .setThumbnail(pfp)
         .addField("User ID", `${usern}#${disc}`);

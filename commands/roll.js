@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
-    let diceRoll = Math.floor((Math.random() * 10) + 1);
+    let diceRoll = Math.floor((Math.random() * 12) + 1);
     let dicon = "https://i.imgur.com/kzm46fB.png"
 
 

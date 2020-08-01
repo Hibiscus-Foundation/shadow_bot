@@ -13,7 +13,7 @@ module.exports.run = async(bot, message, args) => {
         .setColor("#FF6B65")
         .addField("General Commands", "Use ``>help gen`` for General commands")
         .addField("Moderator Commands", "Use ``>help mod`` for Moderator commands")
-        .addField("Fun Commands", "Use ``Use >help fun`` for Fun commands")
+        .addField("Fun Commands", "Use ``>help fun`` for Fun commands")
         .addField("Support Commands", "Use ``>help supp`` for Support commands")
         .addField("Developer", "Purukitto");
 
@@ -33,7 +33,6 @@ module.exports.run = async(bot, message, args) => {
         .addField(">mute", "Mutes a member for a specified time")
         .addField(">warn", "Warn a user for repeatedly breaking rules")
         .addField(">kick", "Kick a user")
-        .addField(">ban", "Permanently ban a user")
         .addField(">purge", "Delete specified number of messages");
 
     let fembed = new Discord.MessageEmbed()
@@ -41,7 +40,6 @@ module.exports.run = async(bot, message, args) => {
         .setThumbnail(ficon)
         .setColor("#FF6B65")
         .addField(">roll", "Roll the dice")
-        .addField(">psychopass", "Measure yours or some other users crime coefficient")
         .addField(">8ball", "Ask the mystic ball for guidance");
 
     let sembed = new Discord.MessageEmbed()

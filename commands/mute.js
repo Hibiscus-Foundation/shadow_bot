@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const ms = require("ms");
 
 module.exports.run = async(bot, message, args) => {
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Nah dont think you can ...");
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nah dont think you can ...");
     let muted = message.mentions.members.first();
     if (!muted) return message.channel.send("You didnt tag a member!");
     let muterole = message.guild.roles.cache.find(ch => ch.name === 'Muted');

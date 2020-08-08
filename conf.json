@@ -1,0 +1,10 @@
+{
+    "boardIDs": [
+        "tNbPCydx"
+    ],
+    "pollInterval": 10000,
+    "contentString": "",
+    "enabledEvents": [
+        "cardCreated", "cardDueDateChanged", "cardUnarchived", "commentAdded", ""
+    ]
+}

@@ -30,7 +30,6 @@ module.exports.run = async(bot, message, args) => {
         .setDescription("Help Menu-Moderator")
         .setThumbnail(micon)
         .setColor("#FF6B65")
-        .addField(">mute", "Mutes a member for a specified time")
         .addField(">warn", "Warn a user for repeatedly breaking rules")
         .addField(">kick", "Kick a user")
         .addField(">purge", "Delete specified number of messages");

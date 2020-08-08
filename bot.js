@@ -3,6 +3,20 @@ const bot = new Discord.Client({
     disablEveryone: true
 });
 const fs = require("fs");
+const conf = JSON.parse(fs.readFileSync('conf.json'))
+let latestActivityID = fs.existsSync('.latestActivityID') ? fs.readFileSync('.latestActivityID') : 0
+const Trello = require('trello-events')
+
+const events = new Trello({
+    pollFrequency: conf.pollInterval, // milliseconds
+    minId: latestActivityID, // auto-created and auto-updated
+    start: false,
+    trello: {
+        boards: conf.boardIDs, // array of Trello board IDs 
+        key: process.env.trelloKey, // your public Trello API key
+        token: process.env.trelloToken // your private Trello token for Trellobot
+    }
+})
 
 bot.commands = new Discord.Collection();
 
@@ -21,9 +35,11 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", async() => {
     console.log(`${bot.user.username} is online!`);
-    bot.user.setActivity("Secret Game Night", {
-        type: "PLAYING"
+    bot.user.setActivity("Hibiscus Foundation", {
+        type: "WATCHING"
     });
+    if (!conf.realNames) conf.realNames = true;
+    events.start();
 });
 
 bot.on("message", async message => {
@@ -64,7 +80,7 @@ bot.on("messageUpdate", (oldMessage, newMessage) => {
                     msg.delete(60000);
                 })
                 .catch();
-            return cuser.send("You think you can just edit it out!? This Maid is better than you thought!");
+            return cuser.send("You think you can just edit it out!? This Doggo is smarter than you thought!");
         }
     }
 });

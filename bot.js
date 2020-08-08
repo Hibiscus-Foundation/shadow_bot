@@ -34,8 +34,8 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("ready", async() => {
-    let guild = bot.guilds.get(process.env.serverID)
-    let channel = bot.channels.get(process.env.channelID)
+    let guild = bot.guilds.cache.get(process.env.serverID)
+    let channel = bot.channels.cache.get(process.env.channelID)
     console.log(`${bot.user.username} is online!`);
     bot.user.setActivity("Hibiscus Foundation", {
         type: "WATCHING"

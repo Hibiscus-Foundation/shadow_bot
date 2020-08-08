@@ -34,11 +34,15 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("ready", async() => {
+    let guild = bot.guilds.get(process.env.serverID)
+    let channel = bot.channels.get(process.env.channelID)
     console.log(`${bot.user.username} is online!`);
     bot.user.setActivity("Hibiscus Foundation", {
         type: "WATCHING"
     });
     if (!conf.realNames) conf.realNames = true;
+    conf.guild = guild
+    conf.channel = channel
     events.start();
 });
 
@@ -378,16 +382,14 @@ const convertMentions = (embed, event) => {
 
 // adds thumbanil and appends user mention to the end of the description, if possible
 const addDiscordUserData = (embed, member) => {
-    if (conf.userIDs[member.username]) {
-        let discordUser = conf.guild.members.get(conf.userIDs[member.username])
+    if (process.env.userIDs[member.username]) {
+        let discordUser = conf.guild.members.get(process.env.userIDs[member.username])
         if (discordUser) embed
             .setThumbnail(discordUser.user.displayAvatarURL)
             .setDescription(`${embed.description} / ${discordUser.toString()}`)
     }
     return embed
 }
-
-
 
 
 bot.login(process.env.token);

@@ -113,7 +113,15 @@ bot.on("guildMemberRemove", async member => {
     welcomechannel.send(left);
 });
 
-// TRELLO EVENT HANDLERS
+
+
+/*
+ ** =======================
+ ** TRELLO EVENT HANDLERS
+ ** =======================
+ */
+
+
 events.on('createCard', (event, board) => {
     if (!eventEnabled(`cardCreated`)) return
     let embed = getEmbedBase(event)
@@ -337,6 +345,49 @@ events.on('updateCheckItemStateOnCard', (event, board) => {
         send(addDiscordUserData(embed, event.memberCreator))
     }
 })
+
+/*
+ ** =======================
+ ** Miscellaneous Trello functions
+ ** =======================
+ */
+
+events.on('maxId', (id) => {
+    if (latestActivityID == id) return
+    latestActivityID = id
+    fs.writeFileSync('.latestActivityID', id)
+})
+
+const send = (embed, content = ``) => conf.channel.send(`${content} ${conf.contentString}`, {
+    embed: embed
+}).catch(err => console.error(err))
+
+const eventEnabled = (type) => conf.enabledEvents.length > 0 ? conf.enabledEvents.includes(type) : true
+
+const logEventFire = (event) => console.log(`${new Date(event.date).toUTCString()} - ${event.type} fired`)
+
+const getEmbedBase = (event) => new Discord.RichEmbed()
+    .setFooter(`${conf.guild.members.get(bot.user.id).displayName} • ${event.data.board.name} [${event.data.board.shortLink}]`, bot.user.displayAvatarURL)
+    .setTimestamp(event.hasOwnProperty(`date`) ? event.date : Date.now())
+    .setColor("#127ABD")
+
+//  Converts Trello @username mentions in titles to Discord mentions, finds channel and role mentions, and mirros Discord user mentions outside the embed
+const convertMentions = (embed, event) => {
+
+}
+
+// adds thumbanil and appends user mention to the end of the description, if possible
+const addDiscordUserData = (embed, member) => {
+    if (conf.userIDs[member.username]) {
+        let discordUser = conf.guild.members.get(conf.userIDs[member.username])
+        if (discordUser) embed
+            .setThumbnail(discordUser.user.displayAvatarURL)
+            .setDescription(`${embed.description} / ${discordUser.toString()}`)
+    }
+    return embed
+}
+
+
 
 
 bot.login(process.env.token);

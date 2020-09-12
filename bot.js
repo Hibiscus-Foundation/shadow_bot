@@ -34,16 +34,16 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 bot.on("ready", async() => {
-    let guild = bot.guilds.cache.get(process.env.serverID)
-    let channel = bot.channels.cache.get(process.env.channelID)
+    // let guild = bot.guilds.cache.get(process.env.serverID)
+    // let channel = bot.channels.cache.get(process.env.channelID)
     console.log(`${bot.user.username} is online!`);
     bot.user.setActivity("Hibiscus Foundation", {
         type: "WATCHING"
     });
-    if (!conf.realNames) conf.realNames = true;
-    conf.guild = guild
-    conf.channel = channel
-    events.start();
+    // if (!conf.realNames) conf.realNames = true;
+    // conf.guild = guild
+    // conf.channel = channel
+    // events.start();
 });
 
 bot.on("message", async message => {

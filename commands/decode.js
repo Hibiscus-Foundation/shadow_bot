@@ -7,6 +7,8 @@ module.exports.run = async(bot, message, args) => {
     let {
         body
     } = await agent.get('http://www.morsecode-api.de/decode?string=' + morseArgs);
+
+    console.log(body.plaintext);
     let morseOut = new Discord.MessageEmbed()
         .setTitle("Morse Decoder")
         .setColor("#FF9900")

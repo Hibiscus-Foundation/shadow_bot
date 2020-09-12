@@ -1,5 +1,6 @@
 node_modules
 botconfig.json
+conf.json
 package-lock.json
 icon.ai
 test.js

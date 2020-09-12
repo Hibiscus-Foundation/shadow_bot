@@ -3,7 +3,7 @@ const agent = require('superagent');
 
 module.exports.run = async(bot, message, args) => {
     mchannel = message.channel;
-    morseArgs = args.replace(' ', '%20');
+    morseArgs = args.join().replace(' ', '%20');
     let {
         body
     } = await agent.get('http://www.morsecode-api.de/decode?string=' + morseArgs);

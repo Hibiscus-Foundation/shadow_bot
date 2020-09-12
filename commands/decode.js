@@ -3,7 +3,7 @@ const agent = require('superagent');
 
 module.exports.run = async(bot, message, args) => {
     mchannel = message.channel;
-    morseArgs = args.join().replace(',', '%20');
+    morseArgs = args.join().replace(/,/g, '%20');
     console.log(morseArgs)
     let {
         body
@@ -13,7 +13,7 @@ module.exports.run = async(bot, message, args) => {
     let morseOut = new Discord.MessageEmbed()
         .setTitle("Morse Decoder")
         .setColor("#FF9900")
-        .addField("Translate:", body.plaintext);
+        .setDescription(body.plaintext);
     mchannel.send(morseOut);
 }
 

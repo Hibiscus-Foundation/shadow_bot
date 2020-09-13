@@ -4,48 +4,36 @@ module.exports.run = async(bot, message, args) => {
     message.channel.messages.fetch({
         limit: 2
     }).then(res => {
-        let no = args[0];
+        if (args[0])
+            let no = args[0];
+        else let no = 5;
         let lm = res.last();
         if (no == 1) {
-            try {
-                await lm.react(':one:');
-            } catch (error) {
-                console.error('One of the emojis failed to react.');
-            }
+            lm.react(':one:');
+            if (error) console.error('One of the emojis failed to react.');
         } else if (no == 2) {
-            try {
-                await lm.react(':one:');
-                await lm.react(':two:');
-            } catch (error) {
-                console.error('One of the emojis failed to react.');
-            }
+            lm.react(':one:')
+                .then(() => lm.react(':two:'))
+                .catch(() => console.error('One of the emojis failed to react.'));
         } else if (no == 3) {
-            try {
-                await lm.react(':one:');
-                await lm.react(':two:');
-                await lm.react(':three:');
-            } catch (error) {
-                console.error('One of the emojis failed to react.');
-            }
+            lm.react(':one:')
+                .then(() => lm.react(':two:'))
+                .then(() => lm.react(':three:'))
+                .catch(() => console.error('One of the emojis failed to react.'));
         } else if (no == 4) {
-            try {
-                await lm.react(':one:');
-                await lm.react(':two:');
-                await lm.react(':three:');
-                await lm.react(':four:');
-            } catch (error) {
-                console.error('One of the emojis failed to react.');
-            }
+            lm.react(':one:')
+                .then(() => lm.react(':two:'))
+                .then(() => lm.react(':three:'))
+                .then(() => lm.react(':four:'))
+                .catch(() => console.error('One of the emojis failed to react.'));
+
         } else if (no == 5) {
-            try {
-                await lm.react(':one:');
-                await lm.react(':two:');
-                await lm.react(':three:');
-                await lm.react(':four:');
-                await lm.react(':five:');
-            } catch (error) {
-                console.error('One of the emojis failed to react.');
-            }
+            lm.react(':one:')
+                .then(() => lm.react(':two:'))
+                .then(() => lm.react(':three:'))
+                .then(() => lm.react(':four:'))
+                .then(() => lm.react(':five:'))
+                .catch(() => console.error('One of the emojis failed to react.'));
         }
     });
 }

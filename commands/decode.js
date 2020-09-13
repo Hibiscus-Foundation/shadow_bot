@@ -13,7 +13,14 @@ module.exports.run = async(bot, message, args) => {
         .setDescription(body.morsecode + " ➡ " + body.plaintext);
     mchannel.send(morseOut);
 
-    // if(body.plaintext == "F")
+    if (body.plaintext == "FIERCE") {
+        mchannel.send("...")
+            .then((mchannel.send("...")))
+            .then((mchannel.send("...")))
+            .then((mchannel.send("`CONNECTION ISSUE`")));
+    } else {
+        mchannel.send("That dosen't make sense does it? I think you should check your answers");
+    }
 }
 
 module.exports.help = {

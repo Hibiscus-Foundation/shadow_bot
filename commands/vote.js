@@ -4,9 +4,10 @@ module.exports.run = async(bot, message, args) => {
     message.channel.messages.fetch({
         limit: 2
     }).then(res => {
+        var no;
         if (args[0])
-            let no = args[0];
-        else let no = 5;
+            no = args[0];
+        else no = 5;
         let lm = res.last();
         if (no == 1) {
             lm.react(':one:');

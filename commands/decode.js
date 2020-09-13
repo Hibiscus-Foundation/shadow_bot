@@ -10,7 +10,7 @@ module.exports.run = async(bot, message, args) => {
     let morseOut = new Discord.MessageEmbed()
         .setTitle("Morse Decoder")
         .setColor("#FF9900")
-        .setDescription(body.morsecode + " ➡️ " + body.plaintext);
+        .setDescription(body.morsecode + " ➡ " + body.plaintext);
     mchannel.send(morseOut);
 }
 

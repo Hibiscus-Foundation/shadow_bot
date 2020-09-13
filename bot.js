@@ -56,20 +56,8 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
 
     if (message.content.startsWith(prefix)) {
-        try {
-            if (handlercmd == "nowplaying" || handlercmd == "play" || handlercmd == "stop" || handlercmd == "skip") {
-                var hcmd = bot.commands.get(handlercmd[0])
-                if (hcmd) hcmd.execute(message, client);
-            } else {
-                var hcmd = bot.commands.get(handlercmd[0])
-                if (hcmd) hcmd.run(bot, message, args);
-            }
-        } catch (error) {
-            console.error(error);
-            message.reply('There was an error trying to execute that command!');
-        }
-        // var hcmd = bot.commands.get(handlercmd[0])
-        // if (hcmd) hcmd.run(bot, message, args);
+        var hcmd = bot.commands.get(handlercmd[0])
+        if (hcmd) hcmd.run(bot, message, args);
     }
 
     if (message.content.toLowerCase().includes("discord") && message.content.includes(".") && message.content.toLowerCase().includes("/")) {

@@ -19,7 +19,7 @@ module.exports.run = async(bot, message, args) => {
             .then((mchannel.send("...")))
             .then((mchannel.send("`CONNECTION ISSUE`")));
     } else {
-        mchannel.send("That dosen't make sense does it? I think you should check your answers");
+        mchannel.send("That dosen't make sense does it? I think you should check your answers!");
     }
 }
 

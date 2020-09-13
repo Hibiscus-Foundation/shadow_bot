@@ -14,7 +14,7 @@ module.exports.run = async(bot, message, args) => {
                 timeout: 5000
             });
         })
-        .catch(console.log("ERROR"));
+        .catch(O_o => {});
 }
 
 module.exports.help = {

@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
-    message.channel.fetchMessages({
+    message.channel.messages.fetch({
             limit: 2
         }).then(res => {
             let lm = res.last()

@@ -52,7 +52,7 @@ bot.on("message", async message => {
     let prefix = process.env.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
-    let handlercmd = message.content.slice(prefix.length).split(" ");
+    let handlercmd = message.content.slice(prefix.length).toLowerCase().split(" ");
     let args = messageArray.slice(1);
 
     if (message.content.startsWith(prefix)) {

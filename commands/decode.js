@@ -1,11 +1,9 @@
 const Discord = require("discord.js");
 const agent = require('superagent');
 
-//Remove white space
-
 module.exports.run = async (bot, message, args) => {
     mchannel = message.channel;
-    morseArgs = args.join().replace(/`/g, '').replace(/ /g, '').replace(/,/g, '%20');
+    morseArgs = args.join().replace(/`/g, '').replace(' ', '').replace(/,/g, '%20');
     let {
         body
     } = await agent.get('http://www.morsecode-api.de/decode?string=' + morseArgs);

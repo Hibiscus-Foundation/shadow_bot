@@ -19,7 +19,6 @@ module.exports.run = async (bot, message, args) => {
             .setDescription("My doggo fren got lost! Can you use the command again! THANKS");
         mchannel.send(cupt);
     }
-
 }
 
 module.exports.help = {

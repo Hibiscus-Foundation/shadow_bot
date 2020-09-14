@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
         body
     } = await agent.get('http://www.morsecode-api.de/encode?string=' + args.join().replace(/,/g, '%20'));
     let morseOut = new Discord.MessageEmbed()
-        .setTitle("Morse Decoder")
+        .setTitle("Morse Encoder")
         .setColor("#FF9900")
         .setDescription(body.plaintext + " ➡ " + body.morsecode);
     mchannel.send(morseOut);

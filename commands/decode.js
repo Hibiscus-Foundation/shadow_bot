@@ -4,6 +4,7 @@ const agent = require('superagent');
 module.exports.run = async (bot, message, args) => {
     mchannel = message.channel;
     morseArgs = args.join().replace(/`/g, '').replace(/,/g, '%20').replace(/ \\/g, '%20').replace(/ \//g, '%20');
+    console.log(morseArgs)
     if (morseArgs.slice(0, 6) == "%20%20") {
         let {
             body
@@ -13,7 +14,6 @@ module.exports.run = async (bot, message, args) => {
             .setColor("#FF9900")
             .setDescription(body.morsecode + " ➡ " + body.plaintext);
         mchannel.send(morseOut);
-
         if (body.plaintext == "FIERCE") {
             mchannel.send("...")
                 .then((mchannel.send("...")))

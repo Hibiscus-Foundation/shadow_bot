@@ -3,8 +3,9 @@ const agent = require('superagent');
 
 module.exports.run = async (bot, message, args) => {
     mchannel = message.channel;
-    morseArgs = args.join().replace(',', '').replace(/`/g, '').replace(/,/g, '%20');
-    console.log(morseArgs)
+    if (args[0] == " ") args[0] = "";
+    morseArgs = args.join().replace(/`/g, '').replace(/,/g, '%20');
+    console.log(morseArgs) //TESTING ONLY
     let {
         body
     } = await agent.get('http://www.morsecode-api.de/decode?string=' + morseArgs);

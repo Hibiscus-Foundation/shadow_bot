@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     console.log(args)
     // if (args[0] == " ") args[0] = "";
     morseArgs = args.join().replace(/`/g, '').replace(/,/g, '%20');
-    if (morseArgs.charAt(0) == '%20') morseArgs.slice(1);
+    if (morseArgs.slice(0, 2) == "%20") morseArgs.slice(3);
     console.log(morseArgs) //TESTING ONLY
     let {
         body

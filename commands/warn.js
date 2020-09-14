@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if (!rUser) return message.channel.send("Couldn't find mentioned user in the Nest.");
     let reason = args.join(" ").slice(22);
@@ -12,6 +12,8 @@ module.exports.run = async(bot, message, args) => {
         return message.reply("Please mention a valid member of this server");
     if (!rUser.kickable)
         return message.reply("Ig you are going out of your boundaries now *Reeee*");
+    if (!reason)
+        return message.reply("Please indicate a reason for the kick!");
 
     let rembed = new Discord.MessageEmbed()
         .setDescription("Warn Log")

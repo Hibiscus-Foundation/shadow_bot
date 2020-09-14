@@ -5,9 +5,10 @@ module.exports.run = async (bot, message, args) => {
     mchannel = message.channel;
     console.log(args)
     morseArgs = args.join().replace(/`/g, '').replace(/,/g, '%20');
-    if (morseArgs.slice(0, 2) == "%20") morseArgs.slice(3);
-    console.log(morseArgs.slice(0, 2))
-    console.log(morseArgs) //TESTING ONLY
+    console.log(morseArgs.slice(3))
+    if (morseArgs.slice(0, 3) == "%20") morseArgs.slice(3);
+    // console.log(morseArgs.slice(0, 2))
+    // console.log(morseArgs) //TESTING ONLY
     let {
         body
     } = await agent.get('http://www.morsecode-api.de/decode?string=' + morseArgs);

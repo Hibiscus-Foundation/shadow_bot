@@ -4,9 +4,9 @@ const agent = require('superagent');
 module.exports.run = async (bot, message, args) => {
     mchannel = message.channel;
     console.log(args)
-    // if (args[0] == " ") args[0] = "";
     morseArgs = args.join().replace(/`/g, '').replace(/,/g, '%20');
     if (morseArgs.slice(0, 2) == "%20") morseArgs.slice(3);
+    console.log(morseArgs.slice(0, 2))
     console.log(morseArgs) //TESTING ONLY
     let {
         body

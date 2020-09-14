@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const agent = require('superagent');
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
     mchannel = message.channel;
     morseArgs = args.join().replace(/`/g, '').replace(/,/g, '%20');
     let {
@@ -19,7 +19,7 @@ module.exports.run = async(bot, message, args) => {
             .then((mchannel.send("...")))
             .then((mchannel.send("`CONNECTION ISSUE`")));
     } else {
-        mchannel.send("That dosen't make sense does it? I think you should check your answers!");
+        mchannel.send("That doesn't make sense does it? I think you should check your answers!");
     }
 }
 

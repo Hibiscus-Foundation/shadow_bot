@@ -3,8 +3,8 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
     let bicon = message.mentions.users.first().displayAvatarURL();
 
-   if (!message.guild.me.hasPermission("BAN_MEMBERS"))
-      return message.channel.send("I don't have enough permission to do that!")
+    if (!message.guild.me.hasPermission("BAN_MEMBERS"))
+        return message.channel.send("I don't have enough permission to do that!")
 
     if (!message.member.hasPermission("BAN_MEMBERS"))
         return message.reply("Sorry, you don't have permissions to use this!");

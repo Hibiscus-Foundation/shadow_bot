@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Time", message.createdAt)
         .addField("Reported by", `${message.author} ID:${message.author.id}`);
 
-    await member.ban(reason)
+    await member.ban({ days: 7, reason: reason })
         .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
     message.delete().catch(O_o => {});
     message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`)

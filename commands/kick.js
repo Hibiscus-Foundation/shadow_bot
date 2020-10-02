@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     let kicon = message.mentions.users.first().displayAvatarURL();
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS"))
-        return message.channel.send("I don't have enough permission to do that!")
+        return message.channel.send("I don't have enough permission to do that!");
 
     if (!message.member.hasPermission("KICK_MEMBERS"))
         return message.reply("Sorry, you don't have permissions to use this!");

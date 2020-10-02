@@ -3,13 +3,16 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
     let kicon = message.mentions.users.first().displayAvatarURL();
 
-    if (!message.member.hasPermission("MANAGE_MESSAGES"))
+    if (!message.guild.me.hasPermission("KICK_MEMBERS"))
+        return message.channel.send("I don't have enough permission to do that!")
+
+    if (!message.member.hasPermission("KICK_MEMBERS"))
         return message.reply("Sorry, you don't have permissions to use this!");
     let member = message.mentions.members.first();
     if (!member)
         return message.reply("Please mention a valid member of this server");
     if (!member.kickable)
-        return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+        return message.reply("I cannot kick this user! Do they have a higher role?");
     let reason = args.slice(1).join(' ');
     if (!reason)
         return message.reply("Please indicate a reason for the kick!");

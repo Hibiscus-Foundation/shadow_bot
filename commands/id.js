@@ -3,11 +3,11 @@ const mergeImages = require('merge-images');
 
 module.exports.run = async(bot, message, args) => {
     const users = message.mentions.users.first() || message.author;
-    console.log(users.user.roles.first())
+    // console.log(users.user.roles.first())
     let botembed = new Discord.MessageEmbed()
         .setDescription("Bot Information")
         .setColor("#00FFFF")
-        .setThumbnail(users.avatarURL)
+        .setThumbnail(users.displayAvatarURL)
         .addField("User Name", users.username);
     return message.channel.send(botembed);
     mergeImages(['/body.png', '/eyes.png', '/mouth.png'])

@@ -15,7 +15,7 @@ module.exports.run = async(bot, message, args) => {
         format: 'jpg'
     }));
 
-    ctx.drawImage(avatar, 30, 170, 150, 150);
+    ctx.drawImage(avatar, 25, 175, 150, 150);
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'id-image.png');
 
     return message.channel.send(attachment);

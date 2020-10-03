@@ -30,7 +30,7 @@ module.exports.run = async(bot, message, args) => {
 
     ctx.font = applyText(canvas, member.roles.cache.first().name);
     ctx.fillStyle = '#111111';
-    ctx.fillText(member.roles.cache.first().name, 315, 290);
+    ctx.fillText(member.roles.cache.first().name, 323, 290);
 
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({
         format: 'jpg'

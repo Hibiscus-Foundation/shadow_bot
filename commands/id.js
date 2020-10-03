@@ -7,11 +7,12 @@ module.exports.run = async(bot, message, args) => {
         member = message.member;
 
     let uicon = mergeImages(['/assets/idbase.png', member.user.displayAvatarURL()]);
+    console.log(uicon)
 
     let botembed = new Discord.MessageEmbed()
         .setDescription(member.roles.cache.first().name)
         .setColor(member.displayHexColor)
-        .setThumbnail(uicon)
+        // .setThumbnail(uicon)
         // .setThumbnail(member.user.displayAvatarURL())
         .addField("User Name", member.displayName);
     return message.channel.send(botembed);

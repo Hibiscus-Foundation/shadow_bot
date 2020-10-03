@@ -12,6 +12,7 @@ module.exports.run = async(bot, message, args) => {
     if (!member)
         member = message.member;
     // const uimg = await loadImage(member.user.displayAvatarURL());
+    console.log(member.user.displayAvatarURL())
     const uimg = await loadImage(`${member.user.displayAvatarURL()}`);
 
 

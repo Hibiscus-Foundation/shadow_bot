@@ -32,9 +32,6 @@ module.exports.run = async(bot, message, args) => {
     ctx.fillStyle = '#111111';
     ctx.fillText(member.roles.cache.first().name, 315, 290);
 
-
-
-
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({
         format: 'jpg'
     }));

@@ -5,7 +5,7 @@ module.exports.run = async(bot, message, args) => {
     let member = message.mentions.members.first();
     if (!member)
         member = message.member;
-    const canvas = Canvas.createCanvas(324, 163);
+    const canvas = Canvas.createCanvas(700, 350);
     const ctx = canvas.getContext('2d');
 
     const background = await Canvas.loadImage('./assets/idbase.png');
@@ -15,7 +15,7 @@ module.exports.run = async(bot, message, args) => {
         format: 'jpg'
     }));
 
-    ctx.drawImage(avatar, 13, 84.5, 65, 65);
+    ctx.drawImage(avatar, 30, 150, 140, 140);
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'id-image.png');
 
     return message.channel.send(attachment);

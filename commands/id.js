@@ -26,11 +26,11 @@ module.exports.run = async(bot, message, args) => {
 
     ctx.font = applyText(canvas, member.displayName);
     ctx.fillStyle = '#111111';
-    ctx.fillText(member.displayName, 300, 225);
+    ctx.fillText(member.displayName, 305, 225);
 
     ctx.font = applyText(canvas, member.roles.cache.first().name);
     ctx.fillStyle = '#111111';
-    ctx.fillText(member.roles.cache.first().name, 300, 290);
+    ctx.fillText(member.roles.cache.first().name, 315, 290);
 
 
 

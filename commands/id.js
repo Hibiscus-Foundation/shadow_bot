@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-import mergeImages from 'merge-images';
+const mergeImages = require('merge-images');
 
 module.exports.run = async(bot, message, args) => {
     let bicon = message.user.displayAvatarURL();

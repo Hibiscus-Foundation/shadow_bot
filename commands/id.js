@@ -21,12 +21,14 @@ module.exports.run = async(bot, message, args) => {
     }));
 
     ctx.drawImage(avatar, 13, 13, 150, 150);
+    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'id-image.png');
 
-    imgUrl = canvas.toDataURL();
+    return message.channel.send(attachment);
+
     let botembed = new Discord.MessageEmbed()
         .setDescription(member.roles.cache.first().name)
         .setColor(member.displayHexColor)
-        .setThumbnail(imgUrl)
+        // .setThumbnail(imgUrl)
         // .setThumbnail(member.user.displayAvatarURL())
         .addField("User Name", member.displayName);
     return message.channel.send(botembed);

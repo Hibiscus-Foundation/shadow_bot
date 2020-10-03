@@ -1,12 +1,20 @@
 const Discord = require("discord.js");
 const mergeImages = require('merge-images');
+const {
+    Canvas,
+    Image
+} = require('canvas');
+
 
 module.exports.run = async(bot, message, args) => {
     let member = message.mentions.members.first();
     if (!member)
         member = message.member;
 
-    let uicon = mergeImages(['/assets/idbase.png', member.user.displayAvatarURL()]);
+    let uicon = mergeImages(['/assets/idbase.png', member.user.displayAvatarURL()], {
+        Canvas: Canvas,
+        Image: Image
+    });
     console.log(uicon)
 
     let botembed = new Discord.MessageEmbed()

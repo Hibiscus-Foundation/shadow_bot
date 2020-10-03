@@ -7,7 +7,7 @@ module.exports.run = async(bot, message, args) => {
     let botembed = new Discord.MessageEmbed()
         .setDescription("Bot Information")
         .setColor("#00FFFF")
-        .setThumbnail(users.displayAvatarURL)
+        .setThumbnail(users.defaultAvatarURL)
         .addField("User Name", users.username);
     return message.channel.send(botembed);
     mergeImages(['/body.png', '/eyes.png', '/mouth.png'])

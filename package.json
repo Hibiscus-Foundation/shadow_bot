@@ -17,6 +17,7 @@
     },
     "homepage": "https://github.com/Purukitto/shadow_bot#readme",
     "dependencies": {
+        "canvas": "^2.6.1",
         "discord.js": "^12.2.0",
         "merge-images": "^2.0.0",
         "superagent": "^5.3.1",

@@ -11,7 +11,9 @@ module.exports.run = async(bot, message, args) => {
     let member = message.mentions.members.first();
     if (!member)
         member = message.member;
-    const uimg = await loadImage(member.user.displayAvatarURL());
+    // const uimg = await loadImage(member.user.displayAvatarURL());
+    const uimg = await loadImage('https://upload.wikimedia.org/wikipedia/en/9/95/Test_image.jpg');
+
 
     mergeImages(['./idbase.png', uimg], {
         Canvas: Canvas,

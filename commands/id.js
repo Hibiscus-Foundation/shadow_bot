@@ -12,7 +12,7 @@ module.exports.run = async(bot, message, args) => {
     if (!member)
         member = message.member;
     // const uimg = await loadImage(member.user.displayAvatarURL());
-    const uimg = await loadImage('https://upload.wikimedia.org/wikipedia/en/9/95/Test_image.jpg');
+    const uimg = await loadImage('https://upload.wikimedia.org/wikipedia/commons/8/85/Logo-Test.png');
 
 
     mergeImages(['./idbase.png', uimg], {

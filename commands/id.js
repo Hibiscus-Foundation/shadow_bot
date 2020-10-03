@@ -26,11 +26,11 @@ module.exports.run = async(bot, message, args) => {
 
     ctx.font = applyText(canvas, member.roles.cache.first().name);
     ctx.fillStyle = '#111111';
-    ctx.fillText('Welcome to the server,', canvas.width / 2.5, canvas.height / 3.5);
+    ctx.fillText(member.roles.cache.first().name, 150, 200);
 
     ctx.font = applyText(canvas, member.displayName);
     ctx.fillStyle = '#111111';
-    ctx.fillText(member.displayName, canvas.width / 2.5, canvas.height / 1.8);
+    ctx.fillText(member.displayName, 150, 300);
 
 
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({

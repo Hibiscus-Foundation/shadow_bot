@@ -14,8 +14,10 @@ module.exports.run = async(bot, message, args) => {
     let uicon = mergeImages(['./assets/idbase.png', member.user.displayAvatarURL()], {
         Canvas: Canvas,
         Image: Image
+    }).then(img => {
+        console.log(img)
     });
-    console.log(uicon)
+
 
     let botembed = new Discord.MessageEmbed()
         .setDescription(member.roles.cache.first().name)

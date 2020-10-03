@@ -12,7 +12,7 @@ module.exports.run = async(bot, message, args) => {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
     ctx.beginPath();
-    ctx.arc(81.5, 81.5, 100, 0, Math.PI * 2, true);
+    ctx.arc(81.5, 81.5, 50, 0, Math.PI * 2, true);
     ctx.closePath();
     ctx.clip();
 
@@ -20,7 +20,7 @@ module.exports.run = async(bot, message, args) => {
         format: 'jpg'
     }));
 
-    ctx.drawImage(avatar, 13, 13, 150, 150);
+    ctx.drawImage(avatar, 13, 13, 50, 50);
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'id-image.png');
 
     return message.channel.send(attachment);

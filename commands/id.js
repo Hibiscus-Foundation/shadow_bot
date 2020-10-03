@@ -13,7 +13,7 @@ module.exports.run = async(bot, message, args) => {
         member = message.member;
     const uimg = await loadImage(member.user.displayAvatarURL());
 
-    mergeImages(['./assets/idbase.png', uimg], {
+    mergeImages(['./idbase.png', uimg], {
         Canvas: Canvas,
         Image: Image
     }).then(img => {

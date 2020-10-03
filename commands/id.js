@@ -11,10 +11,10 @@ module.exports.run = async(bot, message, args) => {
     const background = await Canvas.loadImage('./assets/idbase.png');
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-    ctx.beginPath();
-    ctx.arc(81.5, 81.5, 50, 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.clip();
+    // ctx.beginPath();
+    // ctx.arc(81.5, 81.5, 50, 0, Math.PI * 2, true);
+    // ctx.closePath();
+    // ctx.clip();
 
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({
         format: 'jpg'

@@ -24,13 +24,15 @@ module.exports.run = async(bot, message, args) => {
     ctx.strokeStyle = member.displayHexColor;
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-    ctx.font = applyText(canvas, member.roles.cache.first().name);
-    ctx.fillStyle = '#111111';
-    ctx.fillText(member.roles.cache.first().name, 250, 230);
-
     ctx.font = applyText(canvas, member.displayName);
     ctx.fillStyle = '#111111';
-    ctx.fillText(member.displayName, 250, 285);
+    ctx.fillText(member.displayName, 300, 225);
+
+    ctx.font = applyText(canvas, member.roles.cache.first().name);
+    ctx.fillStyle = '#111111';
+    ctx.fillText(member.roles.cache.first().name, 300, 290);
+
+
 
 
     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({

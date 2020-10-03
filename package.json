@@ -19,7 +19,6 @@
     "dependencies": {
         "canvas": "^2.6.1",
         "discord.js": "^12.2.0",
-        "merge-images": "^2.0.0",
         "superagent": "^5.3.1",
         "trello-events": "^0.1.6",
         "ytdl-core": "^3.2.2"

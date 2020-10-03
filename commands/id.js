@@ -3,7 +3,7 @@ const Canvas = require('canvas');
 
 const applyText = (canvas, text) => {
     const ctx = canvas.getContext('2d');
-    let fontSize = 70;
+    let fontSize = 35;
 
     do {
         ctx.font = `${fontSize -= 10}px sans-serif`;

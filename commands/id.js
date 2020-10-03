@@ -22,10 +22,11 @@ module.exports.run = async(bot, message, args) => {
 
     ctx.drawImage(avatar, 13, 13, 150, 150);
 
+    imgUrl = canvas.toDataURL();
     let botembed = new Discord.MessageEmbed()
         .setDescription(member.roles.cache.first().name)
         .setColor(member.displayHexColor)
-        .setThumbnail(canvas.toBuffer(), 'welcome-image.png')
+        .setThumbnail(imgUrl)
         // .setThumbnail(member.user.displayAvatarURL())
         .addField("User Name", member.displayName);
     return message.channel.send(botembed);

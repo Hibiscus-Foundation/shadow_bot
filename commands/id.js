@@ -6,7 +6,7 @@ module.exports.run = async(bot, message, args) => {
     let member = message.mentions.members.first();
     if (!member)
         member = message.member;
-    console.log(member.roles.first())
+    console.log(member.roles)
     let botembed = new Discord.MessageEmbed()
         .setDescription("Bot Information")
         .setColor("#00FFFF")

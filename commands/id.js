@@ -11,7 +11,7 @@ module.exports.run = async(bot, message, args) => {
     if (!member)
         member = message.member;
 
-    let uicon = mergeImages(['./assets/idbase.png', member.user.displayAvatarURL()], {
+    mergeImages(['./assets/idbase.png', member.user.displayAvatarURL()], {
         Canvas: Canvas,
         Image: Image
     }).then(img => {

@@ -2,13 +2,13 @@ const Discord = require("discord.js");
 const mergeImages = require('merge-images');
 
 module.exports.run = async(bot, message, args) => {
-    let bicon = message.user.displayAvatarURL();
+    const user = message.mentions.users.first() || message.author;
+    console.log(user.roles.first())
     let botembed = new Discord.MessageEmbed()
         .setDescription("Bot Information")
         .setColor("#00FFFF")
-        .setThumbnail(bicon)
-        .addField("Bot Name", bot.user.username)
-        .addField("Created on", bot.user.createdAt);
+        .setThumbnail(user.avatarURL)
+        .addField("User Name", user.username);
     return message.channel.send(botembed);
     mergeImages(['/body.png', '/eyes.png', '/mouth.png'])
         .then(b64 => document.querySelector('img').src = b64);

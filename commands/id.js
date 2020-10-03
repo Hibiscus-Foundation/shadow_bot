@@ -6,9 +6,8 @@ module.exports.run = async(bot, message, args) => {
     let member = message.mentions.members.first();
     if (!member)
         member = message.member;
-    console.log(member.roles.cache.first())
     let botembed = new Discord.MessageEmbed()
-        .setDescription("Bot Information")
+        .setDescription(member.roles.cache.first().name)
         .setColor(member.displayHexColor)
         .setThumbnail(member.user.displayAvatarURL())
         .addField("User Name", member.displayName);

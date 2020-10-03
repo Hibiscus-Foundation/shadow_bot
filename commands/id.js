@@ -16,19 +16,19 @@ module.exports.run = async(bot, message, args) => {
     const uimg = await loadImage(`${member.user.displayAvatarURL()}`);
 
 
-    mergeImages(['./idbase.png', uimg], {
+    const uicon = await mergeImages(['./idbase.png', uimg], {
         Canvas: Canvas,
         Image: Image
-    }).then(img => {
-        console.log(img);
-        let botembed = new Discord.MessageEmbed()
-            .setDescription(member.roles.cache.first().name)
-            .setColor(member.displayHexColor)
-            // .setThumbnail(uicon)
-            // .setThumbnail(member.user.displayAvatarURL())
-            .addField("User Name", member.displayName);
-        return message.channel.send(botembed);
     });
+
+    console.log(uicon);
+    let botembed = new Discord.MessageEmbed()
+        .setDescription(member.roles.cache.first().name)
+        .setColor(member.displayHexColor)
+        // .setThumbnail(uicon)
+        // .setThumbnail(member.user.displayAvatarURL())
+        .addField("User Name", member.displayName);
+    return message.channel.send(botembed);
 }
 
 module.exports.help = {

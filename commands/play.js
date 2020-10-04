@@ -16,7 +16,8 @@ module.exports.run = async(bot, message, args) => {
         const stream = ytdl(`https://www.youtube.com/watch?v=${uri[0]}`, {
             filter: 'audioonly'
         });
-        const dispatcher = connection.play(stream).then(message.channel.send('Playing ' + args.join(' ') + '!'));
+        const dispatcher = connection.play(stream);
+        message.channel.send('🎵 Playing now in ' + voiceChannel + '!');
         dispatcher.on('finish', () => voiceChannel.leave());
     });
 

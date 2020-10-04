@@ -17,7 +17,7 @@ module.exports.run = async(bot, message, args) => {
             filter: 'audioonly'
         });
         const dispatcher = connection.play(stream);
-        message.channel.send('🎵 Playing now in ' + voiceChannel + '!');
+        message.channel.send('⏯  Playing now!');
         dispatcher.on('finish', () => voiceChannel.leave());
     });
 

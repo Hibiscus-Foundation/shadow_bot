@@ -18,6 +18,7 @@
     "homepage": "https://github.com/Purukitto/shadow_bot#readme",
     "dependencies": {
         "@discordjs/opus": "^0.3.2",
+        "axios": "^0.20.0",
         "canvas": "^2.6.1",
         "discord.js": "^12.2.0",
         "ffmpeg-static": "^4.2.7",

@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const ytdl = require('ytdl-core');
+const ytSearch = require('../assets/ytsearch');
 
 module.exports.run = async(bot, message, args) => {
     const voiceChannel = message.member.voice.channel;
@@ -8,11 +10,12 @@ module.exports.run = async(bot, message, args) => {
     }
 
     voiceChannel.join().then(connection => {
-        const stream = ytdl('https://www.youtube.com/watch?v=D57Y1PruTlw', {
+        const uri = ytSearch(args);
+        console.log(uri);
+        const stream = ytdl(`https://www.youtube.com/watch?v=${uri}`, {
             filter: 'audioonly'
         });
         const dispatcher = connection.play(stream);
-
         dispatcher.on('finish', () => voiceChannel.leave());
     });
 }

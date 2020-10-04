@@ -17,10 +17,13 @@
     },
     "homepage": "https://github.com/Purukitto/shadow_bot#readme",
     "dependencies": {
+        "@discordjs/opus": "^0.3.2",
+        "axios": "^0.20.0",
         "canvas": "^2.6.1",
         "discord.js": "^12.2.0",
+        "ffmpeg-static": "^4.2.7",
         "superagent": "^5.3.1",
         "trello-events": "^0.1.6",
-        "ytdl-core": "^3.2.2"
+        "ytdl-core": "^3.3.0"
     }
 }

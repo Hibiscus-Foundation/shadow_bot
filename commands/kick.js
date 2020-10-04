@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async(bot, message, args) => {
     let kicon = message.mentions.users.first().displayAvatarURL();
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS"))
@@ -36,7 +36,9 @@ module.exports.run = async (bot, message, args) => {
                 timeout: 30000
             });
         })
-        .catch(console.log("ERROR"));
+        .catch(err => {
+            throw err
+        });
     let kchannel = message.guild.channels.cache.find(ch => ch.name === 'reports');
     kchannel.send(kembed);
 }

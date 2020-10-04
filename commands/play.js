@@ -10,7 +10,7 @@ module.exports.run = async(bot, message, args) => {
     }
 
     voiceChannel.join().then(connection => {
-        const uri = ytSearch(args);
+        const uri = await ytSearch(args);
         console.log(uri);
         const stream = ytdl(`https://www.youtube.com/watch?v=${uri}`, {
             filter: 'audioonly'

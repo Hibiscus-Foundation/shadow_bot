@@ -11,7 +11,7 @@ Hibiscus Foundation for social welfare (HFSW) is a Non-for-profit, Non-partisan 
 ### Contributors
 
 <a href="https://github.com/Hibiscus-Foundation/tobaccoexposed/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=Hibiscus-Foundation/tobaccoexposed" />
+  <img src="https://contributors-img.web.app/image?repo=Hibiscus-Foundation/shadow_bot" />
 </a>
 
 Made with [contributors-img](https://contributors-img.web.app).

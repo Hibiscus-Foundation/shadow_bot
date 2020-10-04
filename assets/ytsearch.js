@@ -41,5 +41,3 @@ async function searchYoutube(keyword) {
 };
 
 module.exports = searchYoutube;
-//////////Calling Async Function//////////
-// (async() => console.log(await searchYoutube("ddu du ddu du")))();

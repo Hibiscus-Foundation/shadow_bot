@@ -9,19 +9,18 @@ module.exports.run = async(bot, message, args) => {
         return message.reply('please join a voice channel first!');
     }
 
-    async function playNow() {
-        voiceChannel.join().then(connection => {
-            const uri = await ytSearch(args);
-            console.log(uri);
-            const stream = ytdl(`https://www.youtube.com/watch?v=${uri}`, {
-                filter: 'audioonly'
-            });
-            const dispatcher = connection.play(stream);
-            dispatcher.on('finish', () => voiceChannel.leave());
-        });
-    }
+    const uri = await ytSearch(args);
+    console.log(uri);
 
-    playNow().then(console.log("Playing" + args))
+    voiceChannel.join().then(connection => {
+
+        const stream = ytdl(`https://www.youtube.com/watch?v=${uri}`, {
+            filter: 'audioonly'
+        });
+        const dispatcher = connection.play(stream);
+        dispatcher.on('finish', () => voiceChannel.leave());
+    });
+
 }
 
 module.exports.help = {

@@ -9,6 +9,8 @@ module.exports.run = async(bot, message, args) => {
         return message.reply('please join a voice channel first!');
     }
 
+    console.log(args)
+
     const uri = await ytSearch(args);
     console.log(uri);
 
